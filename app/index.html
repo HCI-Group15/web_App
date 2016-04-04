@@ -25,9 +25,13 @@
   </ul> -->
 
   <!-- END OF MENU SECTION -->
-  <header ng-include="'partials/header.html'"></header>
-  <div ng-view></div>
-  <footer ng-include="'partials/footer.html'"></footer>
+
+  <div ng-controller="HomeCtrl">
+      <header ng-include="'partials/header.html'"></header>
+      <div ng-hide="!firstPage" ng-include="'home/home.html'"></div>
+      <div ng-view></div>
+      <footer ng-include="'partials/footer.html'"></footer>
+  </div>
 
   <!-- <div>Angular seed app: v<span app-version></span></div> -->
 
@@ -43,7 +47,9 @@
   <script src="app.js"></script>
   <script src="view2/view2.js"></script>
   <script src="home/home.js"></script>
-  <script src="partials/*"></script>
+  <script src="housing/housing.js"></script>
+  <script src="nutrition/nutrition.js"></script>
+  <script src="entertainment/entertainment.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

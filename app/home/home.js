@@ -4,11 +4,18 @@ angular.module('myApp.home', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/home', {
-    templateUrl: 'home/home.html',
+    templateUrl: 'body.html',
     controller: 'HomeCtrl'
   });
 }])
 
-.controller('HomeCtrl', [function() {
+.controller('HomeCtrl', ['$scope', function($scope) {
+    // Scope Variables Definitions
+    $scope.firstPage = true;
+
+    // Scope function definitions
+    $scope.setFirstPage = function(val) {
+        $scope.firstPage = val;
+    };
 
 }]);
