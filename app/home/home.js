@@ -11,11 +11,10 @@ angular.module('myApp.home', ['ngRoute'])
 
 .controller('HomeCtrl', ['$scope', function($scope) {
     // Scope Variables Definitions
-    $scope.firstPage = true;
+    $scope.pageId = 0;
 
     // Scope function definitions
-    $scope.setFirstPage = function(val) {
-        $scope.firstPage = val;
-    };
-
+    $scope.setPgId = function(pgId) {
+        $scope.pageId = pgId;
+    }
 }]);

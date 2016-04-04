@@ -41,6 +41,14 @@
     float:none;
 }
 
-body {
+#pad-ho {
+	padding-top: 50px;
+}
+
+#pad-main {
+	padding-top: 75px;
+}
+
+#pad-ent {
 	padding-top: 100px;
 }
