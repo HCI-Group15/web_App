@@ -1,4 +1,4 @@
-<div ng-controller="MenuCtrl">
+<div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a href="index.html"><span class="col-xs-4 navbar-brand glyphicon glyphicon-home"></span></a>
+          <a ng-click="setFirstPage(true)" href="index.html"><span class="col-xs-4 navbar-brand glyphicon glyphicon-home"></span></a>
           <span class="col-xs-4 text-center navbar-brand">WebSiteName</span>
         </div>
 
