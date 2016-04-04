@@ -28,7 +28,7 @@
 
   <div ng-controller="HomeCtrl">
       <header ng-include="'partials/header.html'"></header>
-      <div ng-hide="!firstPage" ng-include="'home/home.html'"></div>
+      <div ng-hide="pageId !== 0" ng-include="'home/home.html'"></div>
       <div ng-view></div>
       <footer ng-include="'partials/footer.html'"></footer>
   </div>
