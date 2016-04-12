@@ -1,12 +1,12 @@
-<div class="container" id="pad-ho">
+<div class="container-fluid" id="pad-ho">
     <!-- Panel #1 -->
-    <h1 class="heading-tit">Housing</h1>
-    <div ng-repeat="i in list | orderBy:'dist'">
+    <h1 ng-hide="moreInfo" class="heading-tit">Housing</h1>
+    <div ng-hide="moreInfo" ng-repeat="i in list | orderBy:'dist'">
         <div class="panel panel-success">
             <div class="panel-body">
                 <div class="row">
                     <div class="col-xs-4 col-xs-offset-1 text-center">
-                        <a href="#/housing/housingInfo"><img ng-src="{{i.img}}" alt="Smiley face" class="minipic"></a>
+                        <img ng-click="seeMoreInfo(true, i.id)" ng-src="{{i.img}}" alt="Smiley face" class="minipic">
                     </div>
                     <div class="col-xs-6">
                         <p><b>{{i.name}}</b>
@@ -19,4 +19,49 @@
             <div class="panel-footer text-right"><small>distance: {{i.dist}} miles<small></div>
         </div>
     </div>
-</div>
+
+    <div ng-hide="!moreInfo">
+        <h5 ng-click="moreInfo = false"><span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span> Back</h5>
+        <hr/>
+        <div class="row">
+            <div class="col-xs-12">
+                <img ng-src="{{list[selEl].img}}" class="img" alt="House"/>
+                <hr/>
+                <h3 class="text-left">{{list[selEl].name}}</h3>
+                <h4>Description: <br/>
+                <small>{{list[selEl].desc}}</small></h4>
+                <h4>Distance: <br/>
+                <small>{{list[selEl].dist}} miles</small></h4>
+            </div>
+        </div>
+        <div class="row" ng-click="otherPics = !otherPics">
+            <div class="col-xs-4"><hr/></div>
+            <div ng-show="!otherPics" class="col-xs-4 text-center"><h5>More Pictures</h5></div>
+            <div ng-show="otherPics" class="col-xs-4 text-center"><h5>Less Pictures</h5></div>
+            <div class="col-xs-4"><hr/></div>
+        </div>
+        <div class="row" ng-show="otherPics">
+            <div class="col-xs-12">
+                <img ng-src="{{list[selEl].imgs[0]}}" class="img"/>
+            </div>
+        </div>
+        <hr ng-show="otherPics"/>
+        <div class="row" ng-show="otherPics">
+            <div class="col-xs-12">
+                <img ng-src="{{list[selEl].imgs[1]}}" class="img"/>
+            </div>
+        </div>
+        <hr ng-show="otherPics"/>
+        <div class="row" ng-show="otherPics">
+            <div class="col-xs-12">
+                <img ng-src="{{list[selEl].imgs[2]}}" class="img"/>
+            </div>
+        </div>
+        <hr ng-show="otherPics"/>
+        <div class="row" ng-show="otherPics">
+            <div class="col-xs-12">
+                <img ng-src="{{list[selEl].imgs[3]}}" class="img"/>
+            </div>
+        </div>
+    </div>
+</div> <!-- <div class="container-fluid" id="pad-ho"> -->
